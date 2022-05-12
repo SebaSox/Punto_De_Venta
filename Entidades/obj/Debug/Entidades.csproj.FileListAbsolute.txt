@@ -1,0 +1,5 @@
+C:\Users\54341\source\repos\punto de venta\Entidades\bin\Debug\Entidades.dll
+C:\Users\54341\source\repos\punto de venta\Entidades\bin\Debug\Entidades.pdb
+C:\Users\54341\source\repos\punto de venta\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\54341\source\repos\punto de venta\Entidades\obj\Debug\Entidades.dll
+C:\Users\54341\source\repos\punto de venta\Entidades\obj\Debug\Entidades.pdb

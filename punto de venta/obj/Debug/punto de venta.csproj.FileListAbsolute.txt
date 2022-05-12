@@ -1,0 +1,19 @@
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\punto de venta.exe.config
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\punto de venta.exe
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\punto de venta.pdb
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto de venta.csproj.AssemblyReference.cache
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto_de_venta.Form1.resources
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto_de_venta.Properties.Resources.resources
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto de venta.csproj.GenerateResource.cache
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto de venta.csproj.CoreCompileInputs.cache
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto de venta.exe
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto de venta.pdb
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\Negocioss.dll
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\Datoss.dll
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\Negocioss.pdb
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\Datoss.pdb
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto_de_venta.VentanaPrincipal.resources
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto_de_venta.FormularioUsuario.resources
+C:\Users\54341\source\repos\punto de venta\punto de venta\obj\Debug\punto_de_venta.Inventario.resources
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\Entidades.dll
+C:\Users\54341\source\repos\punto de venta\punto de venta\bin\Debug\Entidades.pdb

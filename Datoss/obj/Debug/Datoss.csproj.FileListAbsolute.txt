@@ -1,0 +1,9 @@
+C:\Users\54341\source\repos\punto de venta\Datoss\bin\Debug\Datoss.dll
+C:\Users\54341\source\repos\punto de venta\Datoss\bin\Debug\Datoss.pdb
+C:\Users\54341\source\repos\punto de venta\Datoss\obj\Debug\Datoss.csproj.AssemblyReference.cache
+C:\Users\54341\source\repos\punto de venta\Datoss\obj\Debug\Datoss.csproj.CoreCompileInputs.cache
+C:\Users\54341\source\repos\punto de venta\Datoss\obj\Debug\Datoss.dll
+C:\Users\54341\source\repos\punto de venta\Datoss\obj\Debug\Datoss.pdb
+C:\Users\54341\source\repos\punto de venta\Datoss\bin\Debug\Entidades.dll
+C:\Users\54341\source\repos\punto de venta\Datoss\bin\Debug\Entidades.pdb
+C:\Users\54341\source\repos\punto de venta\Datoss\obj\Debug\Datoss.csproj.CopyComplete
