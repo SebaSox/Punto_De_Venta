@@ -28,21 +28,40 @@ namespace punto_de_venta
 
         private void B_NuevoUsuario_Click(object sender, EventArgs e)
         {
+            if (NoDejarVacio()) { }
+            else
+            {
+                cn.InsertarUsuario(Txt_Nombre.Text, Txt_Apellido.Text, Txt_DNI.Text, Txt_Telefono.Text, Txt_Usuario.Text, Txt_Contra.Text);
+                Vaciar();
+            }
             
-            cn.InsertarUsuario(Txt_Nombre.Text, Txt_Apellido.Text, Txt_DNI.Text, Txt_Telefono.Text, Txt_Usuario.Text, Txt_Contra.Text);
-            DataGrid.DataSource = cn.ConsultaDT();
         }
         private void B_ModificarUsuario_Click(object sender, EventArgs e)
         {
-            cn.ModificarUsuario(Txt_Nombre.Text, Txt_Apellido.Text, Txt_DNI.Text, Txt_Telefono.Text, Txt_Usuario.Text, Txt_Contra.Text);
-
-            DataGrid.DataSource = cn.ConsultaDT();
+            if (NoDejarVacio()) { }
+            else
+            {
+                cn.ModificarUsuario(Txt_Nombre.Text, Txt_Apellido.Text, Txt_DNI.Text, Txt_Telefono.Text, Txt_Usuario.Text, Txt_Contra.Text);
+                Vaciar();
+            }
+            
+            
         }
 
         private void B_EliminarUsuario_Click(object sender, EventArgs e)
         {
-            cn.EliminarUsuario(Txt_DNI.Text);
-            DataGrid.DataSource = cn.ConsultaDT();
+            if (String.IsNullOrEmpty(Txt_DNI.Text))
+            {
+                MessageBox.Show("El campo DNI esta vacio");
+                return;
+            }
+            else
+            {
+                cn.EliminarUsuario(Txt_DNI.Text);
+                Vaciar();
+            }
+            
+            
         }
 
 
@@ -61,6 +80,33 @@ namespace punto_de_venta
         private void ValidarLetas(object sender, KeyPressEventArgs e)
         {
             Validaciones.SoloLetras(e);
+        }
+
+        private void Vaciar()
+        {
+            Txt_Nombre.Text = "";
+            Txt_Apellido.Text = "";
+            Txt_DNI.Text = "";
+            Txt_Telefono.Text = "";
+            Txt_Usuario.Text = "";
+            Txt_Contra.Text = "";
+            DataGrid.DataSource = cn.ConsultaDT();
+            Txt_Nombre.Focus();
+        }
+
+        private bool NoDejarVacio()
+        {
+            if (String.IsNullOrEmpty(Txt_Apellido.Text) || String.IsNullOrEmpty(Txt_Contra.Text) ||
+                String.IsNullOrEmpty(Txt_DNI.Text) || String.IsNullOrEmpty(Txt_Nombre.Text)
+                || String.IsNullOrEmpty(Txt_Telefono.Text) || String.IsNullOrEmpty(Txt_Usuario.Text))
+            {
+                MessageBox.Show("Uno o mas de los campos esta vacio");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

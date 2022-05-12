@@ -59,5 +59,26 @@ namespace Negocioss
         {
             cn.GuardarFactura(F);
         }
+
+        //Inventario
+
+        public DataTable ConsultaDTInventario()
+        {
+            return cn.ConsultaInventarioDataGrid();
+        }
+        public int InsertarProducto(string Cod, string Prod, string Cat, string Pre)
+        {
+            return cn.InsertarProducto(Cod, Prod, Cat, Pre);
+        }
+        public int ModificarProducto(string Cod, string Prod, string Cat, string Pre)
+        {
+            return cn.ModificarProducto(Cod, Prod, Cat, Pre);
+        }
+        public int EliminarProducto(string Cod)
+        {
+            return cn.EliminarProducto(Cod);
+        }
+
+
     }
 }

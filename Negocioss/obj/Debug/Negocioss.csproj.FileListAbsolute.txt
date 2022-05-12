@@ -9,3 +9,13 @@ C:\Users\54341\source\repos\punto de venta\Negocioss\obj\Debug\Negocioss.pdb
 C:\Users\54341\source\repos\punto de venta\Negocioss\obj\Debug\Negocioss.csproj.CopyComplete
 C:\Users\54341\source\repos\punto de venta\Negocioss\bin\Debug\Entidades.dll
 C:\Users\54341\source\repos\punto de venta\Negocioss\bin\Debug\Entidades.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Debug\Negocioss.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Debug\Negocioss.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Debug\Datoss.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Debug\Entidades.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Debug\Datoss.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Debug\Entidades.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.csproj.AssemblyReference.cache
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.csproj.CoreCompileInputs.cache
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.pdb

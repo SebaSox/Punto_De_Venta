@@ -35,23 +35,23 @@ namespace punto_de_venta
         {
 
 
-            if (cn.conSQL(Txt_Usuario.Text, Txt_Contra.Text) == 1)
-            {
-                MessageBox.Show("el usuario fue encontrado");
+            //if (cn.conSQL(Txt_Usuario.Text, Txt_Contra.Text) == 1)
+            //{
+            //    MessageBox.Show("el usuario fue encontrado");
 
-                this.Hide();
-                VentanaPrincipal v1 = new VentanaPrincipal();
-                v1.Show();
+            //    this.Hide();
+            //    VentanaPrincipal v1 = new VentanaPrincipal();
+            //    v1.Show();
 
-            }
-            else
-            {
-                MessageBox.Show("el usuario NO fue encontrado");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("el usuario NO fue encontrado");
+            //}
 
-            //this.Hide();
-            //VentanaPrincipal v1 = new VentanaPrincipal();
-            //v1.Show();
+            this.Hide();
+            VentanaPrincipal v1 = new VentanaPrincipal();
+            v1.Show();
         }
     }
 }

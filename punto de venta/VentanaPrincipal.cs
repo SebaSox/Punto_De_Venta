@@ -30,7 +30,7 @@ namespace punto_de_venta
             Txt_ImpuestosVenta.Text = Txt_ImpuestosEdit.Text;
             Txt_Descuento.Text = Txt_DescuentosEdit.Text;
 
-
+            
 
             dt = new DataTable();
             dt.Columns.Add("codigo");
@@ -87,54 +87,67 @@ namespace punto_de_venta
 
         private void B_AgregarProducto_Click(object sender, EventArgs e)
         {
-
-            var resultado = cn.ConsultaProductos(Txt_CodProducto.Text);
-            DataRow row = dt.NewRow();
-            row["codigo"] = Txt_CodProducto.Text;
-            row["Nombre producto"] = resultado.Item1;
-            row["Precio Unitario"] = resultado.Item2;
-            row["Cantidad"] = Txt_Cantidad.Text;
-            row["Precio total"] = Int32.Parse(Txt_Cantidad.Text) * double.Parse(resultado.Item2);
-
-            dt.Rows.Add(row);
-
-
-
-            SubTotal = SubTotal + (Int32.Parse(Txt_Cantidad.Text) * double.Parse(resultado.Item2));
-            
-            
-
-            if (double.Parse(Txt_DescuentosEdit.Text) >= Descuento)
+            if (NoDejarVacio()) { }
+            else
             {
-                Total = SubTotal + (SubTotal * (double.Parse(Txt_ImpuestosEdit.Text)/100)) - (SubTotal * (double.Parse(Txt_DescuentosEdit.Text)/100));
-            }
-            else if (double.Parse(Txt_DescuentosEdit.Text) < Descuento)
-            {
-                Total = SubTotal + (SubTotal * (double.Parse(Txt_ImpuestosEdit.Text)/100)) - (SubTotal * (Descuento/100));
+                var resultado = cn.ConsultaProductos(Txt_CodProducto.Text);
+                DataRow row = dt.NewRow();
+                row["codigo"] = Txt_CodProducto.Text;
+                row["Nombre producto"] = resultado.Item1;
+                row["Precio Unitario"] = resultado.Item2;
+                row["Cantidad"] = Txt_Cantidad.Text;
+                row["Precio total"] = Int32.Parse(Txt_Cantidad.Text) * double.Parse(resultado.Item2);
+
+                dt.Rows.Add(row);
+
+
+
+                SubTotal = SubTotal + (Int32.Parse(Txt_Cantidad.Text) * double.Parse(resultado.Item2));
+
+
+
+                if (double.Parse(Txt_DescuentosEdit.Text) >= Descuento)
+                {
+                    Total = SubTotal + (SubTotal * (double.Parse(Txt_ImpuestosEdit.Text) / 100)) - (SubTotal * (double.Parse(Txt_DescuentosEdit.Text) / 100));
+                }
+                else if (double.Parse(Txt_DescuentosEdit.Text) < Descuento)
+                {
+                    Total = SubTotal + (SubTotal * (double.Parse(Txt_ImpuestosEdit.Text) / 100)) - (SubTotal * (Descuento / 100));
+                }
+
+
+                L_SubTotal.Text = SubTotal.ToString();
+                L_Total.Text = Total.ToString();
+                Vaciar();
             }
             
-
-            L_SubTotal.Text = SubTotal.ToString();
-            L_Total.Text = Total.ToString();
-            Vaciar();
 
 
         }
 
         private void B_CodCliente_Click(object sender, EventArgs e)
         {
-            var resultado2 = cn.ConsultaClientes(Txt_CodCliente.Text);
-            Txt_Cliente.Text = resultado2.Item1;
-            Descuento = resultado2.Item2;
+            if (String.IsNullOrEmpty(Txt_CodCliente.Text))
+            {
+                MessageBox.Show("El campo Codigo Cliente esta vacio");
+                return;
+            }
+            else
+            {
+                var resultado2 = cn.ConsultaClientes(Txt_CodCliente.Text);
+                Txt_Cliente.Text = resultado2.Item1;
+                Descuento = resultado2.Item2;
 
-            if (double.Parse(Txt_DescuentosEdit.Text) >= Descuento)
-            {
-                Txt_Descuento.Text = Txt_DescuentosEdit.Text ;
+                if (double.Parse(Txt_DescuentosEdit.Text) >= Descuento)
+                {
+                    Txt_Descuento.Text = Txt_DescuentosEdit.Text;
+                }
+                else if (double.Parse(Txt_DescuentosEdit.Text) < Descuento)
+                {
+                    Txt_Descuento.Text = Descuento.ToString();
+                }
             }
-            else if (double.Parse(Txt_DescuentosEdit.Text) < Descuento)
-            {
-                Txt_Descuento.Text = Descuento.ToString();
-            }
+            
         }
 
         private void Txt_Cantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -226,6 +239,19 @@ namespace punto_de_venta
             e.Graphics.DrawString("Subtotal: " + L_SubTotal.Text, font, Brushes.Black, new RectangleF(0, y += 20, x, 20));
             e.Graphics.DrawString("Total: " + L_Total.Text, font, Brushes.Black, new RectangleF(0, y += 20, x, 20));
 
+        }
+
+        private bool NoDejarVacio()
+        {
+            if (String.IsNullOrEmpty(Txt_CodProducto.Text) || String.IsNullOrEmpty(Txt_Cantidad.Text))
+            {
+                MessageBox.Show("Uno o mas de los campos esta vacio");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

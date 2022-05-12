@@ -13,15 +13,15 @@ namespace Datoss
     public class ConexionSQL
     {
         static string server = "SEBASOX";
-        static string conexionstring = "server= "+server+"; database= PuntoDeVenta;" +
+        static string conexionstring = "server= " + server + "; database= PuntoDeVenta;" +
             "integrated security =true;";
         SqlConnection con = new SqlConnection(conexionstring);
 
-        public int consultalogin (string Usuario, string Contra)
+        public int consultalogin(string Usuario, string Contra)
         {
             int count;
-            con.Open();     
-            
+            con.Open();
+
             string Query = "Select Count(*) FROM persona where Usuario ='" + Usuario + "'" +
                 "and Contra = '" + Contra + "'";
             SqlCommand cmd = new SqlCommand(Query, con);
@@ -69,7 +69,7 @@ namespace Datoss
         {
             int Bandera = 0;
             con.Open();
-            string query = "Delete from Persona Where DNI ='"+Dni+ "'";
+            string query = "Delete from Persona Where DNI ='" + Dni + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             Bandera = cmd.ExecuteNonQuery();
             con.Close();
@@ -86,10 +86,10 @@ namespace Datoss
             SqlDataReader reg = cmd.ExecuteReader();
             if (reg.Read())
             {
-                resultado= reg["NumeroFactura"].ToString();
-                
+                resultado = reg["NumeroFactura"].ToString();
+
             }
-            
+
 
             con.Close();
             return resultado;
@@ -100,7 +100,7 @@ namespace Datoss
             con.Open();
             string resultado = "null";
             string resultado1 = "null";
-            string query = "Select * from Inventario where Codigo = '"+codigo+ "'";
+            string query = "Select * from Inventario where Codigo = '" + codigo + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader reg = cmd.ExecuteReader();
             if (reg.Read())
@@ -108,12 +108,12 @@ namespace Datoss
 
                 resultado = reg["Producto"].ToString();
                 resultado1 = reg["PrecioU"].ToString();
-                
-                
+
+
             }
-            
+
             con.Close();
-            return Tuple.Create(resultado,resultado1);
+            return Tuple.Create(resultado, resultado1);
         }
         public Tuple<string, double> ConsultaClientes(string codigo)
         {
@@ -152,5 +152,52 @@ namespace Datoss
 
 
         }
+
+
+        //Inventario 
+
+        public DataTable ConsultaInventarioDataGrid()
+        {
+            string query = "select Codigo, Producto, Categoria, PrecioU from Inventario order by Codigo ASC";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter Data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            Data.Fill(tabla);
+            return tabla;
+        }
+
+
+        public int InsertarProducto(string Cod, string Prod, string Cat, string Pre)
+        {
+            int Bandera = 0;
+            con.Open();
+            string query = "insert into Inventario values ('" + Prod + "','" + Cat + "','" + Pre + "','" + "" + "','" + Cod + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            Bandera = cmd.ExecuteNonQuery();
+            con.Close();
+            return Bandera;
+        }
+        public int ModificarProducto(string Cod, string Prod, string Cat, string Pre)
+        {
+            int Bandera = 0;
+            con.Open();
+            string query = "Update Inventario set Producto ='" + Prod + "', Categoria = '" + Cat + "', PrecioU = '" + Pre + "', Cantidad = '" + "" + "', Codigo = '" + Cod + "' Where Codigo ='" + Cod + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            Bandera = cmd.ExecuteNonQuery();
+            con.Close();
+            return Bandera;
+        }
+
+        public int EliminarProducto(string Cod)
+        {
+            int Bandera = 0;
+            con.Open();
+            string query = "Delete from Inventario Where Codigo ='" + Cod + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            Bandera = cmd.ExecuteNonQuery();
+            con.Close();
+            return Bandera;
+        }
+
     }
 }
