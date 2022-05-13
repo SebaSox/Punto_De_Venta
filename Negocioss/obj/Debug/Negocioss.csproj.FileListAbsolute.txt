@@ -19,3 +19,4 @@ D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.csproj.Assemb
 D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.csproj.CoreCompileInputs.cache
 D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.dll
 D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Debug\Negocioss.csproj.CopyComplete

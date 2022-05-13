@@ -39,7 +39,7 @@ namespace punto_de_venta
             this.Txt_DescuentosEdit = new System.Windows.Forms.ToolStripTextBox();
             this.B_Menu_Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.inverntarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.historiaDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.L_CodCliente = new System.Windows.Forms.Label();
             this.L_NuFactura = new System.Windows.Forms.Label();
             this.L_Cliente = new System.Windows.Forms.Label();
@@ -63,9 +63,10 @@ namespace punto_de_venta
             this.Txt_Cliente = new System.Windows.Forms.TextBox();
             this.L_Total = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // B_Cerrar
@@ -84,10 +85,11 @@ namespace punto_de_venta
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.B_Menu_Archivo,
             this.B_Menu_Usuario,
-            this.inverntarioToolStripMenuItem});
+            this.inverntarioToolStripMenuItem,
+            this.historiaDeVentasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1153, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1153, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -113,7 +115,7 @@ namespace punto_de_venta
             this.impuestosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Txt_ImpuestosEdit});
             this.impuestosToolStripMenuItem.Name = "impuestosToolStripMenuItem";
-            this.impuestosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.impuestosToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.impuestosToolStripMenuItem.Text = "Impuestos:";
             // 
             // Txt_ImpuestosEdit
@@ -130,7 +132,7 @@ namespace punto_de_venta
             this.descuentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Txt_DescuentosEdit});
             this.descuentosToolStripMenuItem.Name = "descuentosToolStripMenuItem";
-            this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.descuentosToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.descuentosToolStripMenuItem.Text = "Descuentos:";
             // 
             // Txt_DescuentosEdit
@@ -156,15 +158,12 @@ namespace punto_de_venta
             this.inverntarioToolStripMenuItem.Text = "Inverntario";
             this.inverntarioToolStripMenuItem.Click += new System.EventHandler(this.inverntarioToolStripMenuItem_Click);
             // 
-            // pictureBox1
+            // historiaDeVentasToolStripMenuItem
             // 
-            this.pictureBox1.Image = global::punto_de_venta.Properties.Resources.GENERICA;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.historiaDeVentasToolStripMenuItem.Name = "historiaDeVentasToolStripMenuItem";
+            this.historiaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
+            this.historiaDeVentasToolStripMenuItem.Text = "Historia de Ventas";
+            this.historiaDeVentasToolStripMenuItem.Click += new System.EventHandler(this.historiaDeVentasToolStripMenuItem_Click);
             // 
             // L_CodCliente
             // 
@@ -379,6 +378,16 @@ namespace punto_de_venta
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.Imprimir);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::punto_de_venta.Properties.Resources.GENERICA;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -419,8 +428,8 @@ namespace punto_de_venta
             this.Text = "VentanaPrincipal";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,5 +471,6 @@ namespace punto_de_venta
         private System.Windows.Forms.ToolStripMenuItem descuentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox Txt_DescuentosEdit;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.ToolStripMenuItem historiaDeVentasToolStripMenuItem;
     }
 }

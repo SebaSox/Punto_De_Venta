@@ -169,7 +169,7 @@ namespace punto_de_venta
                 fact.Cantidad = row["Cantidad"].ToString();
                 fact.PrecioTotal = row["Precio total"].ToString();
                 fact.Descuento = Txt_Descuento.Text;
-                fact.Cliente = Txt_Cliente.Text;
+                fact.CodCliente = Txt_CodCliente.Text;
                 fact.NumFact= Txt_NumFactura.Text;
 
                 listfact.Add(fact);
@@ -252,6 +252,14 @@ namespace punto_de_venta
             {
                 return false;
             }
+        }
+
+        private void historiaDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Historial v2 = new Historial();
+            this.Hide();
+            v2.ShowDialog();
+            this.Show();
         }
     }
 }

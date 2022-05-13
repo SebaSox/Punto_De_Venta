@@ -33,9 +33,9 @@ namespace Datoss
         }
 
 
-        public DataTable ConsultaUsuariosDataGrid()
+        public DataTable ConsultaClienteDataGrid()
         {
-            string query = "select * from persona";
+            string query = "select * from Cliente";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter Data = new SqlDataAdapter(cmd);
             DataTable tabla = new DataTable();
@@ -44,32 +44,32 @@ namespace Datoss
         }
 
 
-        public int InsertarUsuario(string Nom, string Ape, string Dni, string TEL, string User, string Con)
+        public int InsertarCliente(string Nom, string Ape, string CodCli, string DescCli, string Correo)
         {
             int Bandera = 0;
             con.Open();
-            string query = "insert into Persona values ('" + Nom + "','" + Ape + "','" + Dni + "','" + TEL + "','" + User + "','" + Con + "')";
+            string query = "insert into Cliente values ('" + Nom + "','" + Ape + "','" + CodCli + "','" + DescCli + "','" + Correo + "')";
             SqlCommand cmd = new SqlCommand(query, con);
             Bandera = cmd.ExecuteNonQuery();
             con.Close();
             return Bandera;
         }
-        public int ModificarUsuario(string Nom, string Ape, string Dni, string TEL, string User, string Con)
+        public int ModificarCliente(string Nom, string Ape, string CodCli, string DescCli, string Correo)
         {
             int Bandera = 0;
             con.Open();
-            string query = "Update Persona set Nombre ='" + Nom + "', Apellido = '" + Ape + "', DNI = '" + Dni + "', Telefono = '" + TEL + "', Usuario = '" + User + "', Contra = '" + Con + "' Where DNI ='" + Dni + "'";
+            string query = "Update Cliente set Nombre ='" + Nom + "', Apellido = '" + Ape + "', CodigoCliente = '" + CodCli + "', DescuentoCliente = '" + DescCli + "', Correo = '" + Correo  + "' Where CodigoCliente ='" + CodCli + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             Bandera = cmd.ExecuteNonQuery();
             con.Close();
             return Bandera;
         }
 
-        public int EliminarUsuario(string Dni)
+        public int EliminarCliente(string CodCli)
         {
             int Bandera = 0;
             con.Open();
-            string query = "Delete from Persona Where DNI ='" + Dni + "'";
+            string query = "Delete from Cliente Where CodigoCliente ='" + CodCli + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             Bandera = cmd.ExecuteNonQuery();
             con.Close();
@@ -86,11 +86,16 @@ namespace Datoss
             SqlDataReader reg = cmd.ExecuteReader();
             if (reg.Read())
             {
-                resultado = reg["NumeroFactura"].ToString();
+                if (""!=reg["NumeroFactura"].ToString())
+                {
+                    resultado = reg["NumeroFactura"].ToString();
+                }
+                else
+                {
+                    resultado = "0";
+                }
 
             }
-
-
             con.Close();
             return resultado;
         }
@@ -120,16 +125,14 @@ namespace Datoss
             con.Open();
             string resultado = "null";
             double resultado1 = 0;
-            string query = "select [Nombre]+' '+ [Apellido] as NombreCompleto, [Descuento]  from Cliente where [CodigoCliente] ='" + codigo + "'";
+            string query = "select CONCAT([Nombre],' ', [Apellido]) as NombreCompleto, [DescuentoCliente] from Cliente where [CodigoCliente] =1;";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader reg = cmd.ExecuteReader();
             if (reg.Read())
             {
 
                 resultado = reg["NombreCompleto"].ToString();
-                resultado1 = double.Parse(reg["Descuento"].ToString());
-
-
+                resultado1 = double.Parse(reg["DescuentoCliente"].ToString());
             }
 
             con.Close();
@@ -142,7 +145,9 @@ namespace Datoss
             con.Open();
             foreach (Factura fact in F)
             {
-                string query = "insert into facturacion values ('" + fact.Codigo + "','" + fact.Producto + "','" + fact.PrecioXUnidad + "','" + fact.Cantidad + "','" + fact.PrecioTotal + "','" + fact.Descuento + "','" + fact.Cliente + "','" + fact.NumFact + "')";
+                string query = "insert into facturacion values ('" + fact.Codigo + "','" + fact.Producto + "','" + 
+                    fact.PrecioXUnidad + "','" + fact.Cantidad + "','" + fact.PrecioTotal + "','" + fact.Descuento + 
+                    "','" + fact.CodCliente + "','" + fact.NumFact + "')";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
 
@@ -198,6 +203,43 @@ namespace Datoss
             con.Close();
             return Bandera;
         }
+
+        //Historial
+        public DataTable BuscarFactura(string NF)
+        {
+            string query = "select Codigo, Producto as 'Nombre Producto', Precioxunidad as 'Precio x Unidad', Cantidad, precioTotal as 'Precio total', Descuento, CodigoCliente as 'Codigo Cliente' from Facturacion where NumFactura= '" + NF + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter Data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            Data.Fill(tabla);
+            return tabla;
+        }
+
+        public int SumarTotal(string NF)
+        {
+            int Bandera;
+            con.Open();
+            string query = "select SUM(precioTotal) as 'PrecioTotal'  from Facturacion where NumFactura= '" + NF + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader reg = cmd.ExecuteReader();
+
+            if (reg.Read())
+            {
+                Bandera = Convert.ToInt32(reg["PrecioTotal"]);
+
+
+            }
+            else
+            {
+                Bandera = 0;
+            }
+            
+            con.Close();
+            return Bandera;
+        }
+
+
+
 
     }
 }

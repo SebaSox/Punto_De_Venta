@@ -36,3 +36,4 @@ D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto de venta.csp
 D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto de venta.csproj.CoreCompileInputs.cache
 D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto de venta.exe
 D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto de venta.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto_de_venta.Historial.resources

@@ -31,13 +31,8 @@ namespace punto_de_venta
         {
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Apellido = new System.Windows.Forms.TextBox();
-            this.Txt_DNI = new System.Windows.Forms.TextBox();
-            this.Txt_Telefono = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Txt_Contra = new System.Windows.Forms.TextBox();
-            this.Txt_Usuario = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Txt_CodCliente = new System.Windows.Forms.TextBox();
+            this.Txt_DescCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +42,8 @@ namespace punto_de_venta
             this.B_EliminarUsuario = new System.Windows.Forms.Button();
             this.B_Cerrar = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Txt_Correo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,67 +63,21 @@ namespace punto_de_venta
             this.Txt_Apellido.TabIndex = 1;
             this.Txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarLetas);
             // 
-            // Txt_DNI
+            // Txt_CodCliente
             // 
-            this.Txt_DNI.Location = new System.Drawing.Point(348, 502);
-            this.Txt_DNI.Name = "Txt_DNI";
-            this.Txt_DNI.Size = new System.Drawing.Size(100, 22);
-            this.Txt_DNI.TabIndex = 2;
-            this.Txt_DNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
+            this.Txt_CodCliente.Location = new System.Drawing.Point(348, 502);
+            this.Txt_CodCliente.Name = "Txt_CodCliente";
+            this.Txt_CodCliente.Size = new System.Drawing.Size(100, 22);
+            this.Txt_CodCliente.TabIndex = 2;
+            this.Txt_CodCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
             // 
-            // Txt_Telefono
+            // Txt_DescCliente
             // 
-            this.Txt_Telefono.Location = new System.Drawing.Point(496, 502);
-            this.Txt_Telefono.Name = "Txt_Telefono";
-            this.Txt_Telefono.Size = new System.Drawing.Size(100, 22);
-            this.Txt_Telefono.TabIndex = 3;
-            this.Txt_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Txt_Contra);
-            this.groupBox1.Controls.Add(this.Txt_Usuario);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(708, 454);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 92);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Informacion de acceso:";
-            // 
-            // Txt_Contra
-            // 
-            this.Txt_Contra.Location = new System.Drawing.Point(168, 47);
-            this.Txt_Contra.Name = "Txt_Contra";
-            this.Txt_Contra.Size = new System.Drawing.Size(100, 22);
-            this.Txt_Contra.TabIndex = 3;
-            this.Txt_Contra.UseSystemPasswordChar = true;
-            // 
-            // Txt_Usuario
-            // 
-            this.Txt_Usuario.Location = new System.Drawing.Point(26, 47);
-            this.Txt_Usuario.Name = "Txt_Usuario";
-            this.Txt_Usuario.Size = new System.Drawing.Size(100, 22);
-            this.Txt_Usuario.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(165, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 17);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Contraseña";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Usuario ";
+            this.Txt_DescCliente.Location = new System.Drawing.Point(496, 502);
+            this.Txt_DescCliente.Name = "Txt_DescCliente";
+            this.Txt_DescCliente.Size = new System.Drawing.Size(100, 22);
+            this.Txt_DescCliente.TabIndex = 3;
+            this.Txt_DescCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarNumeros);
             // 
             // label1
             // 
@@ -152,9 +102,9 @@ namespace punto_de_venta
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(345, 480);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 17);
+            this.label3.Size = new System.Drawing.Size(99, 17);
             this.label3.TabIndex = 7;
-            this.label3.Text = "DNI";
+            this.label3.Text = "Codigo Cliente";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
@@ -162,9 +112,9 @@ namespace punto_de_venta
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(493, 482);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
+            this.label4.Size = new System.Drawing.Size(123, 17);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Telefono";
+            this.label4.Text = "Descuento Cliente";
             // 
             // B_NuevoUsuario
             // 
@@ -208,6 +158,7 @@ namespace punto_de_venta
             // 
             // DataGrid
             // 
+            this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid.Location = new System.Drawing.Point(17, 12);
             this.DataGrid.Name = "DataGrid";
@@ -216,12 +167,30 @@ namespace punto_de_venta
             this.DataGrid.Size = new System.Drawing.Size(992, 436);
             this.DataGrid.TabIndex = 13;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(646, 480);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Correo";
+            // 
+            // Txt_Correo
+            // 
+            this.Txt_Correo.Location = new System.Drawing.Point(649, 502);
+            this.Txt_Correo.Name = "Txt_Correo";
+            this.Txt_Correo.Size = new System.Drawing.Size(100, 22);
+            this.Txt_Correo.TabIndex = 4;
+            // 
             // FormularioUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 613);
             this.Controls.Add(this.DataGrid);
+            this.Controls.Add(this.Txt_Correo);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.B_Cerrar);
             this.Controls.Add(this.B_EliminarUsuario);
             this.Controls.Add(this.B_ModificarUsuario);
@@ -230,16 +199,13 @@ namespace punto_de_venta
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.Txt_Telefono);
-            this.Controls.Add(this.Txt_DNI);
+            this.Controls.Add(this.Txt_DescCliente);
+            this.Controls.Add(this.Txt_CodCliente);
             this.Controls.Add(this.Txt_Apellido);
             this.Controls.Add(this.Txt_Nombre);
             this.Name = "FormularioUsuario";
             this.Text = "FormularioUsuario";
             this.Load += new System.EventHandler(this.FormularioUsuario_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -250,21 +216,18 @@ namespace punto_de_venta
 
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.TextBox Txt_Apellido;
-        private System.Windows.Forms.TextBox Txt_DNI;
-        private System.Windows.Forms.TextBox Txt_Telefono;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox Txt_CodCliente;
+        private System.Windows.Forms.TextBox Txt_DescCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Txt_Contra;
-        private System.Windows.Forms.TextBox Txt_Usuario;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button B_NuevoUsuario;
         private System.Windows.Forms.Button B_ModificarUsuario;
         private System.Windows.Forms.Button B_EliminarUsuario;
         private System.Windows.Forms.Button B_Cerrar;
         private System.Windows.Forms.DataGridView DataGrid;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox Txt_Correo;
     }
 }

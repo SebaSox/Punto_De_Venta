@@ -14,9 +14,7 @@ namespace Entidades
         private string cantidad = "";
         private string descuento = "";
         private string precioTotal = "";
-        private string subTotal = "";
-        private string cliente = "";
-        private string total = "";
+        private string Codcliente = "";
         private string numFact = "";
 
         public string Codigo { get => codigo; set => codigo = value; }
@@ -25,9 +23,7 @@ namespace Entidades
         public string Cantidad { get => cantidad; set => cantidad = value; }
         public string Descuento { get => descuento; set => descuento = value; }
         public string PrecioTotal { get => precioTotal; set => precioTotal = value; }
-        public string SubTotal { get => subTotal; set => subTotal = value; }
-        public string Cliente { get => cliente; set => cliente = value; }
-        public string Total { get => total; set => total = value; }
+        public string CodCliente { get => Codcliente; set => Codcliente = value; }
         public string NumFact { get => numFact; set => numFact = value; }
     }
 }

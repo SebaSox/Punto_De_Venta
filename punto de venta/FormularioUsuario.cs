@@ -31,7 +31,7 @@ namespace punto_de_venta
             if (NoDejarVacio()) { }
             else
             {
-                cn.InsertarUsuario(Txt_Nombre.Text, Txt_Apellido.Text, Txt_DNI.Text, Txt_Telefono.Text, Txt_Usuario.Text, Txt_Contra.Text);
+                cn.InsertarCliente(Txt_Nombre.Text, Txt_Apellido.Text, Txt_CodCliente.Text, Txt_DescCliente.Text, Txt_Correo.Text);
                 Vaciar();
             }
             
@@ -41,7 +41,7 @@ namespace punto_de_venta
             if (NoDejarVacio()) { }
             else
             {
-                cn.ModificarUsuario(Txt_Nombre.Text, Txt_Apellido.Text, Txt_DNI.Text, Txt_Telefono.Text, Txt_Usuario.Text, Txt_Contra.Text);
+                cn.ModificarCliente(Txt_Nombre.Text, Txt_Apellido.Text, Txt_CodCliente.Text, Txt_DescCliente.Text, Txt_Correo.Text);
                 Vaciar();
             }
             
@@ -50,14 +50,14 @@ namespace punto_de_venta
 
         private void B_EliminarUsuario_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Txt_DNI.Text))
+            if (String.IsNullOrEmpty(Txt_CodCliente.Text))
             {
-                MessageBox.Show("El campo DNI esta vacio");
+                MessageBox.Show("El campo Codigo Cliente esta vacio");
                 return;
             }
             else
             {
-                cn.EliminarUsuario(Txt_DNI.Text);
+                cn.EliminarCliente(Txt_CodCliente.Text);
                 Vaciar();
             }
             
@@ -86,19 +86,19 @@ namespace punto_de_venta
         {
             Txt_Nombre.Text = "";
             Txt_Apellido.Text = "";
-            Txt_DNI.Text = "";
-            Txt_Telefono.Text = "";
-            Txt_Usuario.Text = "";
-            Txt_Contra.Text = "";
+            Txt_CodCliente.Text = "";
+            Txt_DescCliente.Text = "";
+            Txt_Correo.Text = "";
+
             DataGrid.DataSource = cn.ConsultaDT();
             Txt_Nombre.Focus();
         }
 
         private bool NoDejarVacio()
         {
-            if (String.IsNullOrEmpty(Txt_Apellido.Text) || String.IsNullOrEmpty(Txt_Contra.Text) ||
-                String.IsNullOrEmpty(Txt_DNI.Text) || String.IsNullOrEmpty(Txt_Nombre.Text)
-                || String.IsNullOrEmpty(Txt_Telefono.Text) || String.IsNullOrEmpty(Txt_Usuario.Text))
+            if (String.IsNullOrEmpty(Txt_Apellido.Text)  ||
+                String.IsNullOrEmpty(Txt_CodCliente.Text) || String.IsNullOrEmpty(Txt_Nombre.Text)
+                || String.IsNullOrEmpty(Txt_DescCliente.Text) || String.IsNullOrEmpty(Txt_Correo.Text))
             {
                 MessageBox.Show("Uno o mas de los campos esta vacio");
                 return true;

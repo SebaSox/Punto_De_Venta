@@ -18,26 +18,9 @@ namespace Negocioss
             return cn.consultalogin(user, pass);
         }
 
-        public DataTable ConsultaDT()
-        {
+        
 
-            return cn.ConsultaUsuariosDataGrid();
-
-        }
-
-        public int InsertarUsuario(string Nom, string Ape, string Dni, string TEL, string User, string Con)
-        {
-            return cn.InsertarUsuario(Nom,Ape,Dni,TEL,User,Con);
-        }
-        public int ModificarUsuario(string Nom, string Ape, string Dni, string TEL, string User, string Con)
-        {
-            return cn.ModificarUsuario(Nom, Ape, Dni, TEL, User, Con);
-        }
-
-        public int EliminarUsuario(string Dni)
-        {
-            return cn.EliminarUsuario(Dni);
-        }
+        //Factura
 
         public string ConsultaNumFactura()
         {
@@ -48,7 +31,6 @@ namespace Negocioss
         {
             return cn.ConsultaProductos(codigo);
         }
-
         public Tuple<string, double> ConsultaClientes(string codigo)
         {
             return cn.ConsultaClientes(codigo);
@@ -60,6 +42,31 @@ namespace Negocioss
             cn.GuardarFactura(F);
         }
 
+
+
+
+        //Cliente
+        public DataTable ConsultaDT()
+        {
+
+            return cn.ConsultaClienteDataGrid();
+
+        }
+        public int InsertarCliente(string Nom, string Ape, string CodCli, string DescCli, string Correo)
+        {
+            return cn.InsertarCliente(Nom, Ape, CodCli, DescCli, Correo);
+        }
+        public int ModificarCliente(string Nom, string Ape, string CodCli, string DescCli, string Correo)
+        {
+            return cn.ModificarCliente(Nom, Ape, CodCli, DescCli, Correo);
+        }
+
+        public int EliminarCliente(string CodCli)
+        {
+            return cn.EliminarCliente(CodCli);
+        }
+
+        
         //Inventario
 
         public DataTable ConsultaDTInventario()
@@ -79,6 +86,19 @@ namespace Negocioss
             return cn.EliminarProducto(Cod);
         }
 
+
+
+        //Historial
+
+        public DataTable BuscarFactura(string NF)
+        {
+            return cn.BuscarFactura(NF);
+        }
+
+        public int SumarTotal(string NF)
+        {
+            return cn.SumarTotal(NF);
+        }
 
     }
 }
