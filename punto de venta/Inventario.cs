@@ -36,8 +36,8 @@ namespace punto_de_venta
 
         private void B_Cerrar_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            Application.Exit();
+            this.Close();
+            //Application.Exit();
         }
 
      
@@ -46,8 +46,14 @@ namespace punto_de_venta
             if (NoDejarVacio()){}
             else
             {
-                cn.InsertarProducto(Txt_CodigoProd.Text, Txt_producto.Text, Txt_Categoria.Text, Txt_Precio.Text);
-                Vaciar();
+                int Verificar = cn.InsertarProducto(Txt_CodigoProd.Text, Txt_producto.Text, Txt_Categoria.Text, Txt_Precio.Text);
+                if (Verificar == 0)
+                {
+                    MessageBox.Show("El codgigo " + Txt_CodigoProd.Text + " ya esta en uso");
+                }
+                else { Vaciar(); }
+                
+                
             }
 
 

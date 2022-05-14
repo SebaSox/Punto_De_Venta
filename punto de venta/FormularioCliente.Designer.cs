@@ -1,7 +1,7 @@
 ﻿
 namespace punto_de_venta
 {
-    partial class FormularioUsuario
+    partial class FormularioCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -105,7 +105,6 @@ namespace punto_de_venta
             this.label3.Size = new System.Drawing.Size(99, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Codigo Cliente";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -183,7 +182,7 @@ namespace punto_de_venta
             this.Txt_Correo.Size = new System.Drawing.Size(100, 22);
             this.Txt_Correo.TabIndex = 4;
             // 
-            // FormularioUsuario
+            // FormularioCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,8 +202,8 @@ namespace punto_de_venta
             this.Controls.Add(this.Txt_CodCliente);
             this.Controls.Add(this.Txt_Apellido);
             this.Controls.Add(this.Txt_Nombre);
-            this.Name = "FormularioUsuario";
-            this.Text = "FormularioUsuario";
+            this.Name = "FormularioCliente";
+            this.Text = "Formulario Cliente";
             this.Load += new System.EventHandler(this.FormularioUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.ResumeLayout(false);

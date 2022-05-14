@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Historial.cs">
       <SubType>Form</SubType>
@@ -58,11 +58,11 @@
     <Compile Include="Historial.Designer.cs">
       <DependentUpon>Historial.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioUsuario.cs">
+    <Compile Include="FormularioCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioUsuario.Designer.cs">
-      <DependentUpon>FormularioUsuario.cs</DependentUpon>
+    <Compile Include="FormularioCliente.Designer.cs">
+      <DependentUpon>FormularioCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventario.cs">
       <SubType>Form</SubType>
@@ -79,14 +79,14 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Historial.resx">
       <DependentUpon>Historial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioUsuario.resx">
-      <DependentUpon>FormularioUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioCliente.resx">
+      <DependentUpon>FormularioCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>

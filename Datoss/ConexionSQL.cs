@@ -32,6 +32,8 @@ namespace Datoss
 
         }
 
+        //Clienten
+
 
         public DataTable ConsultaClienteDataGrid()
         {
@@ -42,17 +44,48 @@ namespace Datoss
             Data.Fill(tabla);
             return tabla;
         }
-
-
         public int InsertarCliente(string Nom, string Ape, string CodCli, string DescCli, string Correo)
         {
+            
             int Bandera = 0;
-            con.Open();
-            string query = "insert into Cliente values ('" + Nom + "','" + Ape + "','" + CodCli + "','" + DescCli + "','" + Correo + "')";
-            SqlCommand cmd = new SqlCommand(query, con);
-            Bandera = cmd.ExecuteNonQuery();
-            con.Close();
+
+            
+            if (ConsultarCodCli(CodCli)== CodCli)
+            {
+                Bandera = 0;
+            }
+            else
+            {
+                con.Open();
+                string query = "insert into Cliente values ('" + Nom + "','" + Ape + "','" + CodCli + "','" + DescCli + "','" + Correo + "')";
+                SqlCommand cmd = new SqlCommand(query, con);
+                Bandera = cmd.ExecuteNonQuery();
+                con.Close();
+            }
+
+            
+            
             return Bandera;
+        }
+
+
+        public string ConsultarCodCli(string codcli) 
+        {
+            
+            string resultado = "null";
+            string query = "select CodigoCliente as CodigoCliente from Cliente where CodigoCliente ='" + codcli + "'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader reg = cmd.ExecuteReader();
+            if (reg.Read())
+            {
+                if ("" != reg["CodigoCliente"].ToString())
+                {
+                    resultado = reg["CodigoCliente"].ToString();
+                }
+            }
+            con.Close();
+            return resultado;
         }
         public int ModificarCliente(string Nom, string Ape, string CodCli, string DescCli, string Correo)
         {
@@ -64,7 +97,6 @@ namespace Datoss
             con.Close();
             return Bandera;
         }
-
         public int EliminarCliente(string CodCli)
         {
             int Bandera = 0;
@@ -75,6 +107,8 @@ namespace Datoss
             con.Close();
             return Bandera;
         }
+
+        //Facturacion
 
         public string ConsultaNumFactura()
         {
@@ -103,14 +137,14 @@ namespace Datoss
         public Tuple<string, string> ConsultaProductos(string codigo)
         {
             con.Open();
-            string resultado = "null";
-            string resultado1 = "null";
+            string resultado = null;
+            string resultado1 = null;
             string query = "Select * from Inventario where Codigo = '" + codigo + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader reg = cmd.ExecuteReader();
             if (reg.Read())
             {
-
+                
                 resultado = reg["Producto"].ToString();
                 resultado1 = reg["PrecioU"].ToString();
 
@@ -123,9 +157,9 @@ namespace Datoss
         public Tuple<string, double> ConsultaClientes(string codigo)
         {
             con.Open();
-            string resultado = "null";
-            double resultado1 = 0;
-            string query = "select CONCAT([Nombre],' ', [Apellido]) as NombreCompleto, [DescuentoCliente] from Cliente where [CodigoCliente] =1;";
+            string resultado = null;
+            double resultado1 = 101;
+            string query = "select CONCAT([Nombre],' ', [Apellido]) as NombreCompleto, [DescuentoCliente] from Cliente where [CodigoCliente] ="+codigo+";";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader reg = cmd.ExecuteReader();
             if (reg.Read())
@@ -175,12 +209,39 @@ namespace Datoss
         public int InsertarProducto(string Cod, string Prod, string Cat, string Pre)
         {
             int Bandera = 0;
-            con.Open();
-            string query = "insert into Inventario values ('" + Prod + "','" + Cat + "','" + Pre + "','" + "" + "','" + Cod + "')";
-            SqlCommand cmd = new SqlCommand(query, con);
-            Bandera = cmd.ExecuteNonQuery();
-            con.Close();
+            
+            if (ConsultarCodInven(Cod) == Cod)
+            {
+                Bandera = 0;
+            }
+            else
+            {
+                con.Open();
+                string query = "insert into Inventario values ('" + Prod + "','" + Cat + "','" + Pre + "','" + "" + "','" + Cod + "')";
+                SqlCommand cmd = new SqlCommand(query, con);
+                Bandera = cmd.ExecuteNonQuery();
+                con.Close();
+            }
             return Bandera;
+
+        }
+        public string ConsultarCodInven(string codiven)
+        {
+
+            string resultado = "null";
+            string query = "select Codigo as CodigoInven from Inventario where Codigo ='" + codiven + "'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader reg = cmd.ExecuteReader();
+            if (reg.Read())
+            {
+                if ("" != reg["CodigoInven"].ToString())
+                {
+                    resultado = reg["CodigoInven"].ToString();
+                }
+            }
+            con.Close();
+            return resultado;
         }
         public int ModificarProducto(string Cod, string Prod, string Cat, string Pre)
         {
@@ -215,11 +276,13 @@ namespace Datoss
             return tabla;
         }
 
+
+
         public int SumarTotal(string NF)
         {
             int Bandera;
             con.Open();
-            string query = "select SUM(precioTotal) as 'PrecioTotal'  from Facturacion where NumFactura= '" + NF + "'";
+            string query = "select SUM(precioTotal) as 'PrecioTotal'  from Facturacion where NumFactura= " + NF ;
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader reg = cmd.ExecuteReader();
 
@@ -236,6 +299,23 @@ namespace Datoss
             
             con.Close();
             return Bandera;
+        }
+        public Tuple<string, double> ConsultaClientesHistorial(string codigo)
+        {
+            con.Open();
+            string resultado = "null";
+            double resultado1 = 0;
+            string query = "select CONCAT([Nombre],' ', [Apellido]) as NombreCompleto, [DescuentoCliente] from Cliente where [CodigoCliente] =" + codigo;
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader reg = cmd.ExecuteReader();
+            if (reg.Read())
+            {
+                resultado = reg["NombreCompleto"].ToString();
+                resultado1 = double.Parse(reg["DescuentoCliente"].ToString());
+            }
+
+            con.Close();
+            return Tuple.Create(resultado, resultado1);
         }
 
 

@@ -38,8 +38,8 @@ namespace punto_de_venta
             this.descuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Txt_DescuentosEdit = new System.Windows.Forms.ToolStripTextBox();
             this.B_Menu_Usuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.inverntarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historiaDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.B_Menu_Inventario = new System.Windows.Forms.ToolStripMenuItem();
+            this.B_Menu_Historial = new System.Windows.Forms.ToolStripMenuItem();
             this.L_CodCliente = new System.Windows.Forms.Label();
             this.L_NuFactura = new System.Windows.Forms.Label();
             this.L_Cliente = new System.Windows.Forms.Label();
@@ -85,8 +85,8 @@ namespace punto_de_venta
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.B_Menu_Archivo,
             this.B_Menu_Usuario,
-            this.inverntarioToolStripMenuItem,
-            this.historiaDeVentasToolStripMenuItem});
+            this.B_Menu_Inventario,
+            this.B_Menu_Historial});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1153, 28);
@@ -147,23 +147,23 @@ namespace punto_de_venta
             // B_Menu_Usuario
             // 
             this.B_Menu_Usuario.Name = "B_Menu_Usuario";
-            this.B_Menu_Usuario.Size = new System.Drawing.Size(73, 24);
-            this.B_Menu_Usuario.Text = "Usuario";
+            this.B_Menu_Usuario.Size = new System.Drawing.Size(69, 24);
+            this.B_Menu_Usuario.Text = "Cliente";
             this.B_Menu_Usuario.Click += new System.EventHandler(this.B_Menu_Usuario_Click);
             // 
-            // inverntarioToolStripMenuItem
+            // B_Menu_Inventario
             // 
-            this.inverntarioToolStripMenuItem.Name = "inverntarioToolStripMenuItem";
-            this.inverntarioToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
-            this.inverntarioToolStripMenuItem.Text = "Inverntario";
-            this.inverntarioToolStripMenuItem.Click += new System.EventHandler(this.inverntarioToolStripMenuItem_Click);
+            this.B_Menu_Inventario.Name = "B_Menu_Inventario";
+            this.B_Menu_Inventario.Size = new System.Drawing.Size(94, 24);
+            this.B_Menu_Inventario.Text = "Inverntario";
+            this.B_Menu_Inventario.Click += new System.EventHandler(this.B_Menu_Inventario_Click);
             // 
-            // historiaDeVentasToolStripMenuItem
+            // B_Menu_Historial
             // 
-            this.historiaDeVentasToolStripMenuItem.Name = "historiaDeVentasToolStripMenuItem";
-            this.historiaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
-            this.historiaDeVentasToolStripMenuItem.Text = "Historia de Ventas";
-            this.historiaDeVentasToolStripMenuItem.Click += new System.EventHandler(this.historiaDeVentasToolStripMenuItem_Click);
+            this.B_Menu_Historial.Name = "B_Menu_Historial";
+            this.B_Menu_Historial.Size = new System.Drawing.Size(143, 24);
+            this.B_Menu_Historial.Text = "Historia de Ventas";
+            this.B_Menu_Historial.Click += new System.EventHandler(this.B_Menu_Historial_Click);
             // 
             // L_CodCliente
             // 
@@ -279,6 +279,7 @@ namespace punto_de_venta
             // 
             // B_AgregarProducto
             // 
+            this.B_AgregarProducto.Enabled = false;
             this.B_AgregarProducto.Location = new System.Drawing.Point(616, 406);
             this.B_AgregarProducto.Name = "B_AgregarProducto";
             this.B_AgregarProducto.Size = new System.Drawing.Size(317, 75);
@@ -425,7 +426,7 @@ namespace punto_de_venta
             this.MinimumSize = new System.Drawing.Size(1171, 603);
             this.Name = "VentanaPrincipal";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "VentanaPrincipal";
+            this.Text = "Punto de Venta";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
@@ -441,7 +442,7 @@ namespace punto_de_venta
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem B_Menu_Archivo;
         private System.Windows.Forms.ToolStripMenuItem B_Menu_Usuario;
-        private System.Windows.Forms.ToolStripMenuItem inverntarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem B_Menu_Inventario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label L_CodCliente;
         private System.Windows.Forms.Label L_NuFactura;
@@ -471,6 +472,6 @@ namespace punto_de_venta
         private System.Windows.Forms.ToolStripMenuItem descuentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox Txt_DescuentosEdit;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.ToolStripMenuItem historiaDeVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem B_Menu_Historial;
     }
 }

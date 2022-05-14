@@ -39,6 +39,7 @@ namespace punto_de_venta
             this.label1 = new System.Windows.Forms.Label();
             this.L_Cliente = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridHistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@ namespace punto_de_venta
             // 
             // Txt_Buscar
             // 
-            this.Txt_Buscar.Location = new System.Drawing.Point(13, 148);
+            this.Txt_Buscar.Location = new System.Drawing.Point(12, 148);
             this.Txt_Buscar.Name = "Txt_Buscar";
             this.Txt_Buscar.Size = new System.Drawing.Size(159, 22);
             this.Txt_Buscar.TabIndex = 1;
@@ -83,12 +84,14 @@ namespace punto_de_venta
             // 
             // B_Imprimir
             // 
+            this.B_Imprimir.Enabled = false;
             this.B_Imprimir.Location = new System.Drawing.Point(13, 276);
             this.B_Imprimir.Name = "B_Imprimir";
             this.B_Imprimir.Size = new System.Drawing.Size(159, 62);
             this.B_Imprimir.TabIndex = 4;
             this.B_Imprimir.Text = "Imprimir";
             this.B_Imprimir.UseVisualStyleBackColor = true;
+            this.B_Imprimir.Click += new System.EventHandler(this.B_Imprimir_Click);
             // 
             // B_Cerrar
             // 
@@ -138,6 +141,10 @@ namespace punto_de_venta
             this.label3.TabIndex = 9;
             this.label3.Text = "Cliente:";
             // 
+            // printDocument1
+            // 
+            this.printDocument1.DocumentName = "";
+            // 
             // Historial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -174,5 +181,6 @@ namespace punto_de_venta
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label L_Cliente;
         private System.Windows.Forms.Label label3;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

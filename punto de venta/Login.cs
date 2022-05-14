@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using Negocioss;
 namespace punto_de_venta
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
 
         ConexionSQLN cn = new ConexionSQLN();
 
 
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }

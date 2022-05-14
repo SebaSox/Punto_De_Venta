@@ -66,7 +66,8 @@ namespace Negocioss
             return cn.EliminarCliente(CodCli);
         }
 
-        
+
+
         //Inventario
 
         public DataTable ConsultaDTInventario()
@@ -98,6 +99,10 @@ namespace Negocioss
         public int SumarTotal(string NF)
         {
             return cn.SumarTotal(NF);
+        }
+        public Tuple<string, double> ConsultaClientesHistorial(string codigo)
+        {
+            return cn.ConsultaClientesHistorial(codigo);
         }
 
     }

@@ -11,16 +11,15 @@ using Negocioss;
 
 namespace punto_de_venta
 {
-    public partial class FormularioUsuario : Form
+    public partial class FormularioCliente : Form
     {
         ConexionSQLN cn = new ConexionSQLN();
-        public FormularioUsuario()
+        public FormularioCliente()
         {
             InitializeComponent();
             DataGrid.DataSource = cn.ConsultaDT();
         }
 
-        private void label3_Click(object sender, EventArgs e) {}
 
         private void FormularioUsuario_Load(object sender, EventArgs e) {}
 
@@ -31,21 +30,30 @@ namespace punto_de_venta
             if (NoDejarVacio()) { }
             else
             {
-                cn.InsertarCliente(Txt_Nombre.Text, Txt_Apellido.Text, Txt_CodCliente.Text, Txt_DescCliente.Text, Txt_Correo.Text);
-                Vaciar();
-            }
-            
+                if (Convert.ToInt32(Txt_DescCliente.Text)<=100)
+                {
+                    int Verificar = cn.InsertarCliente(Txt_Nombre.Text, Txt_Apellido.Text, Txt_CodCliente.Text, Txt_DescCliente.Text, Txt_Correo.Text);
+                    if (Verificar == 0)
+                    {
+                        MessageBox.Show("El codgigo " + Txt_CodCliente.Text + " ya esta en uso");
+                    }
+                    else{Vaciar();}
+                }
+                else { MessageBox.Show("Coloque un descuento razonable");}   
+            } 
         }
         private void B_ModificarUsuario_Click(object sender, EventArgs e)
         {
             if (NoDejarVacio()) { }
             else
             {
-                cn.ModificarCliente(Txt_Nombre.Text, Txt_Apellido.Text, Txt_CodCliente.Text, Txt_DescCliente.Text, Txt_Correo.Text);
-                Vaciar();
-            }
-            
-            
+                if (Convert.ToInt32(Txt_DescCliente.Text) <= 100)
+                {
+                    cn.ModificarCliente(Txt_Nombre.Text, Txt_Apellido.Text, Txt_CodCliente.Text, Txt_DescCliente.Text, Txt_Correo.Text);
+                    Vaciar();
+                }
+                else { MessageBox.Show("Coloque un descuento razonable"); }
+            }    
         }
 
         private void B_EliminarUsuario_Click(object sender, EventArgs e)
@@ -69,8 +77,8 @@ namespace punto_de_venta
 
         private void B_Cerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            //Application.Exit();
+            //this.Close();
+            Application.Exit();
         }
 
         private void ValidarNumeros(object sender, KeyPressEventArgs e)
@@ -108,5 +116,7 @@ namespace punto_de_venta
                 return false;
             }
         }
+
+      
     }
 }
