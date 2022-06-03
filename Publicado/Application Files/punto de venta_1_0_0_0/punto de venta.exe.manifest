@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="punto de venta.exe" version="1.0.0.0" publicKeyToken="0bfacab508f415c2" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="punto de venta" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="punto de venta.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si quiere cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Datoss.dll" size="11264">
+      <assemblyIdentity name="Datoss" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>RNjl0FFalvIYToO9FeV5Lcep/ZURVl2zlmZF3nqiO9M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Entidades.dll" size="5120">
+      <assemblyIdentity name="Entidades" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>QiOWf53HAkAEL/0luRGOi0TI31OxoQm86JM5MRUaPaM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocioss.dll" size="5632">
+      <assemblyIdentity name="Negocioss" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>rBfiB+ZaLUyP40x/7WPbPlrv5ZDtOHvJqVGM+Q6QRZk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="punto de venta.exe" size="40368">
+      <assemblyIdentity name="punto de venta" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>r0R+xQOB+imFb2xXb6wiOCXEQZCjbPjhxPviuYfEP2M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="punto de venta.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SEBASOX\54341" issuerKeyHash="775e9def9c173eb52c29283073091cc3cd62e46e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>iL1n49NfZ2lmn1o46j9HHRISaMKrYZMHJAaZCCI9Z30=</DigestValue></Reference></SignedInfo><SignatureValue>hiYTFkPum7aLopuK97+EgmWzduR7RhK/fnH4zR8Fbi2qtMV8XBw2giXd7Tg2OHNIoumcNwT6BxHXuxSCtb1d0sykIat9Iq1k2LMvJRF1Ml8/f4fk96NoBmhIpPwAEgIAhx3WCcxCRc/TE4xvdEVyrvJvQKjEkFtDC5Kd+RasNYk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>uyhBc+b8gEL9BKN0fmmBOFql8BN11A5lc/2fSsybc91zmdo43jKiMX275rOpguXZGmWRrDkJhsll8mTwSsHmQfNtNXUGnS1BAPQqUvfBpREx44aEK/oxfjAz8tXKeB5/2QbpifGzgYa6Wjkhbho7s3vaGyjIvRtLMh7n97rvblE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="7d673d2208990624079361abc26812121d473fea385a9f6669675fd3e367bd88" Description="" Url=""><as:assemblyIdentity name="punto de venta.exe" version="1.0.0.0" publicKeyToken="0bfacab508f415c2" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SEBASOX\54341</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>W6Wt12W8Ur+hR3lJ3XTsn4pQkPKlyGqaYo3l+bJcLgI=</DigestValue></Reference></SignedInfo><SignatureValue>hvTAVOTiDDXmGIlMwgcifBVcDjhALqVaYKhMRduUxEpEtHxGm7dclEfCruZiM/Evwz2r4cha1VvcPkNWcvGL4ZtaDvarQF9Yntzmbw5Mf0vmB0EqdE9VhWnzw/eP9Z6CIi5h+4snkqBNh3ud7DR6DwollQGhu0xj8vT+kNmeI4s=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>uyhBc+b8gEL9BKN0fmmBOFql8BN11A5lc/2fSsybc91zmdo43jKiMX275rOpguXZGmWRrDkJhsll8mTwSsHmQfNtNXUGnS1BAPQqUvfBpREx44aEK/oxfjAz8tXKeB5/2QbpifGzgYa6Wjkhbho7s3vaGyjIvRtLMh7n97rvblE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQM0A+J2Y4M4ZFVHPk1Ppf1TANBgkqhkiG9w0BAQsFADAlMSMwIQYDVQQDHhoAUwBFAEIAQQBTAE8AWABcADUANAAzADQAMTAeFw0yMjA2MDMwNTM0MThaFw0yMzA2MDMxMTM0MThaMCUxIzAhBgNVBAMeGgBTAEUAQgBBAFMATwBYAFwANQA0ADMANAAxMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7KEFz5vyAQv0Eo3R+aYE4WqXwE3XUDmVz/Z9KzJtz3XOZ2jjeMqIxfbvms6mC5dkaZZGsOQmGyWXyZPBKweZB8201dQadLUEA9CpS98GlETHjhoQr+jF+MDPy1cp4Hn/ZBumJ8bOBhrpaOSFuGjuze9obKMi9G0syHuf3uu9uUQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBACkc0YrOkTiGhQxjA1Z2ktojIEBooULLYp2p743HJPvK4FoJoUsvKtAAjlEDxo76Pmo3MIyZ1hdAKQqgmuB3kt0jwZpSAfeL8BwCL4/3aeLHjxvtGG22s6+Mixfspyp9PbTPsuzd158pWbLCJUAbyvHnVfZPdWCgA+C5gEV12z5J</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

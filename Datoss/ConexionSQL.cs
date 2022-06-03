@@ -12,7 +12,7 @@ namespace Datoss
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= SEBASOX;"+" database= PuntoDeVenta;" +
+        static string conexionstring = "server= localhost;"+" database= PuntoDeVenta;" +
             "integrated security =true;";
         SqlConnection con = new SqlConnection(conexionstring);
 

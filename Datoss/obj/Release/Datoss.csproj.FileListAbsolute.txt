@@ -4,6 +4,5 @@ D:\GIT\Punto de venta\Punto_De_Venta\Datoss\bin\Release\Entidades.dll
 D:\GIT\Punto de venta\Punto_De_Venta\Datoss\bin\Release\Entidades.pdb
 D:\GIT\Punto de venta\Punto_De_Venta\Datoss\obj\Release\Datoss.csproj.AssemblyReference.cache
 D:\GIT\Punto de venta\Punto_De_Venta\Datoss\obj\Release\Datoss.csproj.CoreCompileInputs.cache
-D:\GIT\Punto de venta\Punto_De_Venta\Datoss\obj\Release\Datoss.csproj.CopyComplete
 D:\GIT\Punto de venta\Punto_De_Venta\Datoss\obj\Release\Datoss.dll
 D:\GIT\Punto de venta\Punto_De_Venta\Datoss\obj\Release\Datoss.pdb
