@@ -369,7 +369,7 @@ namespace punto_de_venta
             // 
             this.L_Total.AutoSize = true;
             this.L_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Total.Location = new System.Drawing.Point(264, 456);
+            this.L_Total.Location = new System.Drawing.Point(317, 456);
             this.L_Total.Name = "L_Total";
             this.L_Total.Size = new System.Drawing.Size(197, 91);
             this.L_Total.TabIndex = 26;
