@@ -1,0 +1,11 @@
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Release\Negocioss.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Release\Negocioss.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Release\Datoss.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Release\Entidades.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Release\Datoss.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\bin\Release\Entidades.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Release\Negocioss.csproj.AssemblyReference.cache
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Release\Negocioss.csproj.CoreCompileInputs.cache
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Release\Negocioss.csproj.CopyComplete
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Release\Negocioss.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Negocioss\obj\Release\Negocioss.pdb

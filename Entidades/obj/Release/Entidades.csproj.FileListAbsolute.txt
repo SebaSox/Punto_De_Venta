@@ -1,0 +1,5 @@
+D:\GIT\Punto de venta\Punto_De_Venta\Entidades\bin\Release\Entidades.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Entidades\bin\Release\Entidades.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+D:\GIT\Punto de venta\Punto_De_Venta\Entidades\obj\Release\Entidades.dll
+D:\GIT\Punto de venta\Punto_De_Venta\Entidades\obj\Release\Entidades.pdb

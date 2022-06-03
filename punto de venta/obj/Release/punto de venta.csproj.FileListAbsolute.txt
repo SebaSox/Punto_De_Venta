@@ -1,0 +1,21 @@
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\punto de venta.exe.config
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\punto de venta.exe
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\punto de venta.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\Entidades.dll
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\Negocioss.dll
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\Datoss.dll
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\Entidades.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\Negocioss.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\bin\Release\Datoss.pdb
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto de venta.csproj.AssemblyReference.cache
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto_de_venta.Login.resources
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto_de_venta.Historial.resources
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto_de_venta.FormularioCliente.resources
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto_de_venta.Inventario.resources
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto_de_venta.Properties.Resources.resources
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto_de_venta.VentanaPrincipal.resources
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto de venta.csproj.GenerateResource.cache
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto de venta.csproj.CoreCompileInputs.cache
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto de venta.csproj.CopyComplete
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto de venta.exe
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Release\punto de venta.pdb

@@ -37,3 +37,4 @@ D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto de venta.pdb
 D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto_de_venta.Historial.resources
 D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto_de_venta.Login.resources
 D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto_de_venta.FormularioCliente.resources
+D:\GIT\Punto de venta\Punto_De_Venta\punto de venta\obj\Debug\punto de venta.csproj.CopyComplete
